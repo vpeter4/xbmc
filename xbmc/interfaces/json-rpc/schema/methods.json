@@ -150,7 +150,8 @@
           },
           { "type": "object", "required": true, "additionalProperties": false,
             "properties": {
-              "channelid": { "$ref": "Library.Id", "required": true }
+              "channelid": { "$ref": "Library.Id", "required": true },
+              "seconds": { "type": "time_t", "required": false, "description": "Archive time for playback" }
             }
           },
           { "type": "object", "required": true, "additionalProperties": false,

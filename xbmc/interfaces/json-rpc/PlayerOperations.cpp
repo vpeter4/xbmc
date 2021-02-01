@@ -740,6 +740,8 @@ JSONRPC_STATUS CPlayerOperations::Open(const std::string &method, ITransportLaye
     if (!channel)
       return InvalidParams;
 
+    channel->SetChannelArchiveSeconds(static_cast<time_t>(parameterObject["item"]["seconds"].asInteger()));
+
     if (!CServiceBroker::GetPVRManager().GUIActions()->PlayMedia(std::make_shared<CFileItem>(channel)))
       return FailedToExecute;
 

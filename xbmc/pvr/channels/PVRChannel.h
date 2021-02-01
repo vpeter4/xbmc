@@ -214,6 +214,17 @@ namespace PVR
      * @brief reset changed flag after persist
      */
     void Persisted();
+
+    /*!
+     * @brief Set the seconds to play from for this channel.
+     * @param iSeconds time in seconds from epoch
+     */
+    void SetChannelArchiveSeconds(time_t iSeconds);
+
+    /*!
+     * @return Number of seconds for the archive.
+     */
+    time_t GetChannelArchiveSeconds() const;
     //@}
 
     /*! @name Client related channel methods
@@ -494,6 +505,7 @@ namespace PVR
     CPVRChannelNumber m_channelNumber; /*!< the active channel number this channel has in the currently selected channel group */
     std::shared_ptr<CPVRRadioRDSInfoTag> m_rdsTag; /*! < the radio rds data, if available for the channel. */
     bool m_bHasArchive = false; /*!< true if this channel supports archive */
+    time_t m_iChannelArchiveSeconds = 0; /*!< seconds to start playing from */
     //@}
 
     /*! @name EPG related channel data

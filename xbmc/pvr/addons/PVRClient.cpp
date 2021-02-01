@@ -391,6 +391,7 @@ void CPVRClient::WriteClientChannelInfo(const std::shared_ptr<CPVRChannel>& xbmc
   addonChannel.bIsHidden = xbmcChannel->IsHidden();
   strncpy(addonChannel.strMimeType, xbmcChannel->MimeType().c_str(),
           sizeof(addonChannel.strMimeType) - 1);
+  addonChannel.iChannelArchiveSeconds = xbmcChannel->GetChannelArchiveSeconds();
 }
 
 bool CPVRClient::GetAddonProperties()

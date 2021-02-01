@@ -171,6 +171,9 @@ public:
 
   /// @brief To get with @ref SetOrder changed values.
   bool GetOrder() const { return m_cStructure->iOrder; }
+
+  // return archive seconds
+  time_t GetChannelArchiveSeconds() const { return m_cStructure->iChannelArchiveSeconds; }
   ///@}
 
 private:

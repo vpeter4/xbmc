@@ -386,6 +386,18 @@ bool CPVRChannel::IsEmpty() const
   return m_strFileNameAndPath.empty();
 }
 
+void CPVRChannel::SetChannelArchiveSeconds(time_t iSeconds)
+{
+  CSingleLock lock(m_critSection);
+  m_iChannelArchiveSeconds = iSeconds;
+}
+
+time_t CPVRChannel::GetChannelArchiveSeconds() const
+{
+  CSingleLock lock(m_critSection);
+  return m_iChannelArchiveSeconds;
+}
+
 /********** Client related channel methods **********/
 
 bool CPVRChannel::SetClientID(int iClientId)
